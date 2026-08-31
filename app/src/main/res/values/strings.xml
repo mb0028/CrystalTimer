@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Crystal Timer</string>
+    <string name="title_activity_timer_is_finished">Timer is finished Activity</string>
+</resources>
