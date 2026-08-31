@@ -5,6 +5,7 @@ Simple timer app for Android
 - 📦 Only 2 megabytes
 - 🍃 Material 3 expressive ui
 - 🏷️ Android 9+ (Tested on Android 17)
+- 📺 Android TV support
 
 ## Screenshots
 

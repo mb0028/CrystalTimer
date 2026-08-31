@@ -16,7 +16,7 @@ android {
         minSdk = 28
         targetSdk = 37
         versionCode = 1
-        versionName = "1.0.0-2026.08.31"
+        versionName = "1.1.0-2026.09.01"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -28,10 +28,11 @@ android {
             optimization {
                 enable = false
             }
-            ndk {
-                abiFilters.clear()
-                abiFilters.add("arm64-v8a")
-            }
+//            ndk {
+//                abiFilters.clear()
+//                abiFilters.add("arm64-v8a")
+//                abiFilters.add("armeabi-v7a")
+//            }
         }
     }
     compileOptions {
