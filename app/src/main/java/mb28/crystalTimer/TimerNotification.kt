@@ -32,7 +32,6 @@ fun showTimerNotification(nm: NotificationManagerCompat, context: Activity, titl
     val n = NotificationCompat.Builder(context, CHANNEL_LIVE_TIMER)
         .setColor(color.toArgb())
         .setContentTitle(title)
-        .setContentText(subtitle)
         .setShortCriticalText(shortCriticalText)
         .setOngoing(true)
         .setRequestPromotedOngoing(true)
