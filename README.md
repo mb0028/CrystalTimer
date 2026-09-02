@@ -4,6 +4,7 @@ Simple timer app for Android
 
 - 📦 Only 2 megabytes
 - 🍃 Material 3 expressive ui
+- 📌 Live notification support
 - 🏷️ Android 9+ (Tested on Android 17)
 - 📺 Android TV support
 
@@ -14,6 +15,8 @@ Simple timer app for Android
 
 ## TODOs
 
+- [ ] Prevent app from being killed when it's in background (Top priority to-do)
+- [ ] Add ignore battery optimization popup when starting new timer if battery optimization is on balance
 - [ ] Add alarm
 - [ ] Add stopwatch
 - [ ] Vibrate after ring
