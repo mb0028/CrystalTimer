@@ -1,5 +1,6 @@
 ## v1.2.0
 - Timer is now only shows remaining duration in notification instead of a giant & useless "Timer" text
+- Add ignore battery optimization popup
 
 ## v1.1.0
 - New app icon

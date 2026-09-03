@@ -16,7 +16,7 @@ Simple timer app for Android
 ## TODOs
 
 - [ ] Prevent app from being killed when it's in background (Top priority to-do)
-- [ ] Add ignore battery optimization popup when starting new timer if battery optimization is on balance
+- [x] Add ignore battery optimization popup when starting new timer if battery optimization is on balance
 - [ ] Add alarm
 - [ ] Add stopwatch
 - [ ] Vibrate after ring

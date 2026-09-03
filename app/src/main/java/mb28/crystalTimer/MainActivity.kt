@@ -1,6 +1,7 @@
 package mb28.crystalTimer
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.media.Ringtone
@@ -8,7 +9,9 @@ import android.media.RingtoneManager
 import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.PowerManager
 import android.os.VibratorManager
+import android.provider.Settings
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.LocalActivity
@@ -52,6 +55,7 @@ import androidx.compose.ui.unit.sp
 import androidx.core.app.NotificationChannelCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.getSystemService
+import androidx.core.net.toUri
 import androidx.core.view.WindowCompat
 import mb28.crystalTimer.ui.theme.CrystalTimerTheme
 import kotlin.time.Duration.Companion.milliseconds
@@ -135,6 +139,7 @@ fun TimerPage(modifier: Modifier = Modifier, nm: NotificationManagerCompat) {
         isRunning = false
         nm.cancel(0)
     }
+    @SuppressLint("BatteryLife")
     fun start(durationMS: Long) {
         ringtone.stop()
         context?.window?.decorView?.keepScreenOn = true
@@ -159,6 +164,12 @@ fun TimerPage(modifier: Modifier = Modifier, nm: NotificationManagerCompat) {
         }
         timer.start()
         isRunning = true
+        if (!(context!!.getSystemService("power") as PowerManager)
+                .isIgnoringBatteryOptimizations(context.packageName)) {
+            val intent = Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS)
+            intent.data = "package:${context.packageName}".toUri()
+            context.startActivity(intent)
+        }
     }
 
     Column(
