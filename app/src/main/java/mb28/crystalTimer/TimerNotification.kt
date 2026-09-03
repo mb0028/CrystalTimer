@@ -9,7 +9,7 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.core.graphics.drawable.IconCompat
 import kotlin.time.Duration
 
-fun showTimerNotification(nm: NotificationManagerCompat, context: Activity, title: String, subtitle: String,
+fun showTimerNotification(nm: NotificationManagerCompat, context: Activity, title: String,
                           shortCriticalText: String, color: androidx.compose.ui.graphics.Color, progress: Duration,
                           duration: Duration, id: Int = 0) {
     val d = duration.inWholeSeconds.toInt()
@@ -32,7 +32,6 @@ fun showTimerNotification(nm: NotificationManagerCompat, context: Activity, titl
     val n = NotificationCompat.Builder(context, CHANNEL_LIVE_TIMER)
         .setColor(color.toArgb())
         .setContentTitle(title)
-        .setContentText(subtitle)
         .setShortCriticalText(shortCriticalText)
         .setOngoing(true)
         .setRequestPromotedOngoing(true)

@@ -1,3 +1,6 @@
+## v1.2.0
+- Timer is now only shows remaining duration in notification instead of a giant & useless "Timer" text
+
 ## v1.1.0
 - New app icon
 - Add app category in manifest
