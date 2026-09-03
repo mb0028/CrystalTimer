@@ -55,7 +55,6 @@ import androidx.core.content.getSystemService
 import androidx.core.view.WindowCompat
 import mb28.crystalTimer.ui.theme.CrystalTimerTheme
 import kotlin.time.Duration.Companion.milliseconds
-import kotlin.time.Duration.Companion.seconds
 
 const val CHANNEL_LIVE_TIMER = "Timer"
 
@@ -140,7 +139,7 @@ fun TimerPage(modifier: Modifier = Modifier, nm: NotificationManagerCompat) {
         context?.window?.decorView?.keepScreenOn = true
         duration = durationMS
         time = durationMS
-        timer = object : CountDownTimer(duration, 500) {
+        timer = object : CountDownTimer(duration, 300) {
             override fun onFinish() {
                 stop()
                 ringtone.play()
@@ -153,8 +152,9 @@ fun TimerPage(modifier: Modifier = Modifier, nm: NotificationManagerCompat) {
                 val timerText = "${t.inWholeHours.toString().padStart(2, '0')}:" +
                         "${t.inWholeMinutes.rem(60).toString().padStart(2, '0')}:" +
                         t.inWholeSeconds.rem(60).toString().padStart(2, '0')
-                showTimerNotification(nm, context!!, timerText, timerText,
-                    primary, time.seconds, duration.seconds)
+                showTimerNotification(nm, context!!, timerText,
+                    primary
+                )
             }
         }
         timer.start()
