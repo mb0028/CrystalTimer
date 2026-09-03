@@ -153,7 +153,7 @@ fun TimerPage(modifier: Modifier = Modifier, nm: NotificationManagerCompat) {
                 val timerText = "${t.inWholeHours.toString().padStart(2, '0')}:" +
                         "${t.inWholeMinutes.rem(60).toString().padStart(2, '0')}:" +
                         t.inWholeSeconds.rem(60).toString().padStart(2, '0')
-                showTimerNotification(nm, context!!, timerText, "", timerText,
+                showTimerNotification(nm, context!!, timerText, timerText,
                     primary, time.seconds, duration.seconds)
             }
         }
